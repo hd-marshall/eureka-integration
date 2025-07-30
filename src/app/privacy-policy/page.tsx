@@ -2,19 +2,18 @@
 import React from 'react';
 import type { Metadata } from 'next';
 
-// export const metadata: Metadata = {
-//   title: 'Privacy Policy | Perfect Kitchen & Robes',
-//   description: 'Privacy Policy for Perfect Kitchen & Robes - Learn how we collect, use, and protect your personal information.',
-// };
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Tech Fusion',
+  description: 'Privacy Policy for Tech Fusion - Learn how we collect, use, and protect your personal information.',
+};
 
-// // Privacy Policy configuration - company info
-// const businessInfo = {
-//   name: "Perfect Kitchen & Robes",
-//   website: "www.perfectkitchenrobes.com",
-//   address: "57 Capital Link Drive CAMPBELLFIELD VIC 3061",
-//   email: "info@perfectkitchenrobes.com",
-//   phone: "0433 537 057"
-// };
+const businessInfo = {
+  name: "Tech Fusion",
+  website: "techfusion.au",
+  address: "N/a",
+  email: "fusiontechnologyau@gmail.com",
+  phone: "N/a"
+};
 
 export default function PrivacyPolicy() {
   return (
@@ -51,7 +50,7 @@ export default function PrivacyPolicy() {
           This Personal Information is obtained in many ways including interviews, correspondence, by
           telephone and facsimile, by email, via our website {businessInfo.website}, from your
           website, from media and publications, from other publicly available sources, from cookies and
-          from third parties. We don't guarantee website links or policy of authorised third parties.
+          from third parties. We don&apos;t guarantee website links or policy of authorised third parties.
         </p>
         
         <p className="mb-4">
@@ -71,7 +70,7 @@ export default function PrivacyPolicy() {
         
         <p className="mb-4">
           Sensitive information is defined in the Privacy Act to include information or opinion about such
-          things as an individual's racial or ethnic origin, political opinions, membership of a political
+          things as an individual&apos;s racial or ethnic origin, political opinions, membership of a political
           association, religious or philosophical beliefs, membership of a trade union or other
           professional body, criminal record or health information.
         </p>

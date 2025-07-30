@@ -2,16 +2,16 @@
 import React from 'react';
 import type { Metadata } from 'next';
 
-// export const metadata: Metadata = {
-//   title: 'Cookie Policy | Perfect Kitchen & Robes',
-//   description: 'Cookie Policy for Perfect Kitchen & Robes - Learn how we use cookies and related technologies on our website.',
-// };
+export const metadata: Metadata = {
+  title: 'Cookie Policy | Tech Fusion',
+  description: 'Cookie Policy for Tech Fusion - Learn how we use cookies and related technologies on our website.',
+};
 
-// // Cookie Policy configuration - company info
-// const businessInfo = {
-//   name: "Perfect Kitchen & Robes",
-//   website: "www.perfectkitchenrobes.com"
-// };
+// Cookie Policy configuration - company info
+const businessInfo = {
+  name: "Tech Fusion",
+  website: "techfusion.au"
+};
 
 export default function CookiePolicy() {
   return (
@@ -20,8 +20,8 @@ export default function CookiePolicy() {
         <h1 className="text-3xl font-bold mb-6 text-center">Cookie Policy</h1>
         
         <p className="mb-4">
-          {businessInfo.name} ("us", "we", or "our") uses cookies, tracking pixels and related
-          technologies on {businessInfo.website} (the "Service"). By using the Service, you
+          {businessInfo.name} (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;) uses cookies, tracking pixels and related
+          technologies on {businessInfo.website} (the &quot;Service&quot;). By using the Service, you
           consent to the use of these cookies, tracking pixels and related technologies.
         </p>
         
@@ -40,7 +40,7 @@ export default function CookiePolicy() {
         </p>
         
         <p className="mb-4">
-          Cookies can be "persistent" or "session" cookies.
+          Cookies can be &quot;persistent&quot; or &quot;session&quot; cookies.
         </p>
         
         <h2 className="text-2xl font-semibold mt-8 mb-4">How {businessInfo.name} uses cookies</h2>
@@ -102,7 +102,7 @@ export default function CookiePolicy() {
         <h2 className="text-2xl font-semibold mt-8 mb-4">What are your choices regarding cookies</h2>
         
         <p className="mb-4">
-          If you'd like to delete cookies or instruct your web browser to delete or refuse cookies, please
+          If you&apos;d like to delete cookies or instruct your web browser to delete or refuse cookies, please
           visit the help pages of your web browser.
         </p>
         
@@ -129,7 +129,7 @@ export default function CookiePolicy() {
             <a href="https://optout.aboutads.info/" className="text-blue-600 hover:underline">https://optout.aboutads.info/</a>
           </li>
           <li className="mb-2">
-            You can opt out of Google's use of cookies by visiting Google's Ads Settings page:
+            You can opt out of Google&apos;s use of cookies by visiting Google&apos;s Ads Settings page:
             <a href="https://adssettings.google.com" className="text-blue-600 hover:underline ml-1">https://adssettings.google.com</a>.
           </li>
           <li className="mb-2">

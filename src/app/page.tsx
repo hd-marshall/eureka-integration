@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { PageWrapper } from "./components/PageWrapper";
 
-import ParticleAnimation from "./components/ui/ParticleAnimation"
-
 import Hero from "./components/Hero";
 import Services from "./components/Services"
 import ProjectPortfolio from './components/ProjectPortfolio'

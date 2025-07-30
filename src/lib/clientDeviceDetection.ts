@@ -120,7 +120,7 @@ export function getClientOperatingSystem(): OSType {
 /**
  * Debounce function for resize events
  */
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
@@ -134,7 +134,7 @@ export function debounce<T extends (...args: any[]) => any>(
 /**
  * Throttle function for scroll events
  */
-export function throttle<T extends (...args: any[]) => any>(
+export function throttle<T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): (...args: Parameters<T>) => void {
@@ -196,20 +196,28 @@ export function getReferrer(): string {
   return document.referrer || '';
 }
 
-/**
- * Get network connection information
- */
-export function getConnectionInfo(): {
+interface ConnectionInfo {
   effectiveType?: string;
   downlink?: number;
   rtt?: number;
   saveData?: boolean;
-} | null {
+}
+
+interface NavigatorWithConnection extends Navigator {
+  connection?: ConnectionInfo;
+}
+
+/**
+ * Get network connection information
+ */
+export function getConnectionInfo(): ConnectionInfo | null {
   if (typeof navigator === 'undefined' || !('connection' in navigator)) {
     return null;
   }
 
-  const connection = (navigator as any).connection;
+  const connection = (navigator as NavigatorWithConnection).connection;
+  if (!connection) return null;
+  
   return {
     effectiveType: connection.effectiveType,
     downlink: connection.downlink,
@@ -262,10 +270,7 @@ function detectOSFromUA(userAgent: string): OSType {
 // SEO FUNCTIONS (client-safe)
 // ============================================================================
 
-/**
- * Generate structured data for organization
- */
-export function generateOrganizationStructuredData(org: {
+interface OrganizationData {
   name: string;
   url: string;
   logo?: string;
@@ -279,7 +284,50 @@ export function generateOrganizationStructuredData(org: {
     postalCode: string;
     addressCountry: string;
   };
-}) {
+}
+
+interface ServiceData {
+  name: string;
+  description: string;
+  provider: string;
+  url: string;
+  image?: string;
+  offers?: {
+    price: string;
+    priceCurrency: string;
+  };
+}
+
+interface PageData {
+  title: string;
+  description: string;
+  url: string;
+  image?: string;
+  type?: 'website' | 'article' | 'profile';
+  siteName?: string;
+}
+
+interface TwitterCardData {
+  title: string;
+  description: string;
+  image?: string;
+  card?: 'summary' | 'summary_large_image' | 'app' | 'player';
+  creator?: string;
+  site?: string;
+}
+
+interface RobotsOptions {
+  index?: boolean;
+  follow?: boolean;
+  archive?: boolean;
+  snippet?: boolean;
+  imageindex?: boolean;
+}
+
+/**
+ * Generate structured data for organization
+ */
+export function generateOrganizationStructuredData(org: OrganizationData) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -299,17 +347,7 @@ export function generateOrganizationStructuredData(org: {
 /**
  * Generate structured data for service pages
  */
-export function generateServiceStructuredData(service: {
-  name: string;
-  description: string;
-  provider: string;
-  url: string;
-  image?: string;
-  offers?: {
-    price: string;
-    priceCurrency: string;
-  };
-}) {
+export function generateServiceStructuredData(service: ServiceData) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -332,14 +370,7 @@ export function generateServiceStructuredData(service: {
 /**
  * Generate Open Graph meta tags
  */
-export function generateOpenGraphTags(page: {
-  title: string;
-  description: string;
-  url: string;
-  image?: string;
-  type?: 'website' | 'article' | 'profile';
-  siteName?: string;
-}) {
+export function generateOpenGraphTags(page: PageData) {
   return {
     'og:title': page.title,
     'og:description': page.description,
@@ -353,14 +384,7 @@ export function generateOpenGraphTags(page: {
 /**
  * Generate Twitter Card meta tags
  */
-export function generateTwitterCardTags(page: {
-  title: string;
-  description: string;
-  image?: string;
-  card?: 'summary' | 'summary_large_image' | 'app' | 'player';
-  creator?: string;
-  site?: string;
-}) {
+export function generateTwitterCardTags(page: TwitterCardData) {
   return {
     'twitter:card': page.card || 'summary_large_image',
     'twitter:title': page.title,
@@ -383,13 +407,7 @@ export function generateCanonicalUrl(baseUrl: string, path: string): string {
 /**
  * Generate robots meta content based on page type
  */
-export function generateRobotsContent(options: {
-  index?: boolean;
-  follow?: boolean;
-  archive?: boolean;
-  snippet?: boolean;
-  imageindex?: boolean;
-}): string {
+export function generateRobotsContent(options: RobotsOptions): string {
   const {
     index = true,
     follow = true,

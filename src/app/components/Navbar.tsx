@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { getClientDeviceType, type DeviceType } from '@/lib/clientDeviceDetection';
 
@@ -323,10 +324,14 @@ export default function Navbar({ serverDeviceType }: NavbarProps) {
                 ? 'translate-x-0 opacity-100 scale-100' 
                 : 'translate-x-8 opacity-0 scale-95'
             }`}>
-              <img 
+              <Image
                 src={navigationData.servicesSubmenu.image}
                 alt="Our Services"
+                width={2070}
+                height={384}
                 className="w-full h-96 object-cover rounded-lg shadow-2xl"
+                priority={false}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>
