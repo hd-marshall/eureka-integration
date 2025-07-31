@@ -21,13 +21,13 @@ export default function Home() {
   return (
     <PageWrapper className="overflow-hidden">
       {/* Hero Section */}
-      <Hero />
+      <Hero/>
 
       {/* Services */}
       <Services />
 
       {/* Portfolio Showcase */}
-      < ProjectPortfolio />
+      <ProjectPortfolio />
 
       {/* Using Trusted Brands */}
       <BrandCarousel images={brandImages}/>

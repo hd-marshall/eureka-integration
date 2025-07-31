@@ -27,7 +27,7 @@ const ParticleOrb: React.FC<ParticleOrbProps> = ({ className = '' }) => {
       .particle-orb-container {
         position: absolute;
         inset: 0;
-        z-index: 0;
+        z-index: 1;
         width: 100%;
         height: 100%;
         background: transparent;
@@ -37,19 +37,61 @@ const ParticleOrb: React.FC<ParticleOrbProps> = ({ className = '' }) => {
       
       .orb-wrap {
         position: absolute;
-        top: 38%;
+        top: 42%;
         left: 75%;
         width: 0;
         height: 0;
         transform-style: preserve-3d;
         perspective: 1000px;
-        animation: rotate 8s infinite linear;
+        animation: rotate 11.2s infinite linear;
         transform: translateX(-50%) translateY(-50%);
+        transform-origin: center center;
+      }
+      
+      @media (max-width: 767px) {
+        .orb-wrap {
+          top: 65%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%) scale(0.35);
+          transform-origin: center center;
+        }
+      }
+      
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .orb-wrap {
+          transform: translateX(-50%) translateY(-50%) scale(0.45);
+          transform-origin: center center;
+        }
       }
       
       @keyframes rotate {
+        0% {
+          transform: translateX(-50%) translateY(-50%) rotateY(0deg);
+        }
         100% {
-          transform: translateX(-50%) translateY(-50%) rotateY(360deg) rotateX(360deg);
+          transform: translateX(-50%) translateY(-50%) rotateY(360deg);
+        }
+      }
+      
+      @media (max-width: 767px) {
+        @keyframes rotate {
+          0% {
+            transform: translateX(-50%) translateY(-50%) scale(0.35) rotateY(0deg);
+          }
+          100% {
+            transform: translateX(-50%) translateY(-50%) scale(0.35) rotateY(360deg);
+          }
+        }
+      }
+      
+      @media (min-width: 768px) and (max-width: 1023px) {
+        @keyframes rotate {
+          0% {
+            transform: translateX(-50%) translateY(-50%) scale(0.45) rotateY(0deg);
+          }
+          100% {
+            transform: translateX(-50%) translateY(-50%) scale(0.45) rotateY(360deg);
+          }
         }
       }
       
@@ -58,7 +100,7 @@ const ParticleOrb: React.FC<ParticleOrbProps> = ({ className = '' }) => {
         width: 7px;
         height: 7px;
         opacity: 0;
-        animation-duration: 8s;
+        animation-duration: 11.2s;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
       }
@@ -69,6 +111,9 @@ const ParticleOrb: React.FC<ParticleOrbProps> = ({ className = '' }) => {
       const z = Math.random() * 360;
       const y = Math.random() * 360;
       const colorIndex = Math.floor((i - 1) % 3);
+      
+      // Generate random size between 4px and 10px
+      const particleSize = Math.floor(Math.random() * 7) + 4; // 4-10px range
       
       // Generate random shapes
       const shapes = [
@@ -100,6 +145,8 @@ const ParticleOrb: React.FC<ParticleOrbProps> = ({ className = '' }) => {
 
       css += `
         .particle:nth-child(${i}) {
+          width: ${particleSize}px;
+          height: ${particleSize}px;
           background-color: ${color};
           ${randomShape}
           animation-name: orbit${i};
@@ -107,19 +154,20 @@ const ParticleOrb: React.FC<ParticleOrbProps> = ({ className = '' }) => {
         }
         
         @keyframes orbit${i} {
+          0% {
+            transform: rotateZ(-${z}deg) rotateY(${y}deg) translateX(1200px) rotateZ(${z}deg);
+            opacity: 0;
+          }
           20% {
+            transform: rotateZ(-${z}deg) rotateY(${y}deg) translateX(228px) rotateZ(${z}deg);
             opacity: 1;
           }
-          30% {
-            transform: rotateZ(-${z}deg) rotateY(${y}deg) translateX(180px) rotateZ(${z}deg);
-          }
-          80% {
-            transform: rotateZ(-${z}deg) rotateY(${y}deg) translateX(180px) rotateZ(${z}deg);
+          70% {
+            transform: rotateZ(-${z}deg) rotateY(${y}deg) translateX(228px) rotateZ(${z}deg);
             opacity: 1;
           }
           100% {
-            transform: rotateZ(-${z}deg) rotateY(${y}deg) translateX(540px) rotateZ(${z}deg);
-            opacity: 0;
+            opacity: 1;
           }
         }
       `;

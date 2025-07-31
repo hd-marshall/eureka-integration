@@ -113,6 +113,7 @@ const ServicesSlider: React.FC = () => {
     <div 
       ref={containerRef}
       className="w-full min-h-screen bg-brand-navy flex flex-col items-center justify-center pt-8 pb-16 md:py-0"
+      id='services'
     >
       <div className={`w-full max-w-7xl px-4 transition-all duration-700 ${
         isVisible ? 'opacity-100' : 'opacity-0'

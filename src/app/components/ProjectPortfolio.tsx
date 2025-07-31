@@ -108,7 +108,7 @@ const GalleryShowcase: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="w-full py-12 sm:py-16 bg-brand-background">
+    <section ref={sectionRef} className="w-full py-12 sm:py-16 bg-brand-background" id='portfolio'>
       <div className="max-w-7xl mx-auto px-2 sm:px-4">
         <div className={`text-center mb-8 sm:mb-10 md:mb-12 transition-all duration-1000 ease-out ${
           isVisible 

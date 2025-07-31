@@ -100,8 +100,11 @@ const Hero: React.FC = (): React.JSX.Element => {
 
   return (
     <section className="bg-brand-background w-full overflow-hidden h-[85vh] relative">
-      {/* Main content - absolutely positioned */}
-      <div className="absolute top-[40%] left-0 transform -translate-y-1/2 w-full lg:w-[55%] md:w-[65%] px-4 sm:px-10 md:px-8 lg:px-16">
+      {/* Particle Animation - behind everything */}
+      <ParticleAnimation className="absolute inset-0 z-0" />
+
+      {/* Main content - absolutely positioned with higher z-index */}
+      <div className="absolute top-[40%] left-0 transform -translate-y-1/2 w-full lg:w-[55%] md:w-[65%] px-4 sm:px-10 md:px-8 lg:px-16 z-10">
         {/* Main heading */}
         <h1 className="font-eb-garamond text-3xl md:text-4xl lg:text-5xl max-sm:text-center font-bold text-brand-navy leading-tight mb-6">
           {heroTitle}
@@ -113,20 +116,18 @@ const Hero: React.FC = (): React.JSX.Element => {
         </p>
         
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button className="border-2 border-brand-navy text-brand-navy px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white hover:cursor-pointer transition-all duration-200 hover:-translate-y-0.5">
+        <div className="flex flex-col sm:flex-row gap-4 z-20 relative">
+          <button className="border-2 border-brand-navy bg-brand-background text-brand-navy px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white hover:cursor-pointer transition-all duration-200 hover:-translate-y-0.5 z-20 relative">
             {secondaryButtonText}
           </button>
-          <button className="border-2 border-brand-navy bg-brand-navy text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white hover:shadow-lg hover:cursor-pointer transition-all duration-200 hover:-translate-y-0.5">
+          <button className="border-2 border-brand-navy bg-brand-navy text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white hover:shadow-lg hover:cursor-pointer transition-all duration-200 hover:-translate-y-0.5 z-20 relative">
             {primaryButtonText}
           </button>
         </div>
       </div>
-
-      <ParticleAnimation className="absolute inset-0 z-0" />
         
-      {/* Stats section - absolutely positioned at bottom */}
-      <div className="absolute top-[85%] left-1/2 transform -translate-x-1/2 flex md:flex-row sm:flex-row sm:relative justify-center items-center gap-8 md:gap-12">
+      {/* Stats section - absolutely positioned at bottom with higher z-index */}
+      <div className="absolute top-[85%] left-1/2 transform -translate-x-1/2 flex md:flex-row sm:flex-row sm:relative justify-center items-center gap-8 md:gap-12 z-10">
           {stats.map((stat, index) => (
             <React.Fragment key={index}>
               <div className="text-center">
