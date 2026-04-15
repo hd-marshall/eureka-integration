@@ -40,33 +40,6 @@ const galleryItems: GalleryItem[] = [
     technologies: ["React", "Python", "MongoDB", "WebRTC"],
     link: "#"
   },
-  {
-    id: 4,
-    title: "Logistics Dashboard",
-    category: "API Development",
-    imageUrl: "https://via.placeholder.com/400x300/ef4444/ffffff?text=Logistics",
-    description: "Real-time tracking and analytics dashboard for supply chain management with predictive routing algorithms.",
-    technologies: ["Vue.js", "GraphQL", "Redis", "Docker"],
-    link: "#"
-  },
-  {
-    id: 5,
-    title: "Social Media Campaign",
-    category: "Digital Marketing",
-    imageUrl: "https://via.placeholder.com/400x300/8b5cf6/ffffff?text=Marketing",
-    description: "Comprehensive digital marketing campaign that increased brand engagement by 250% across multiple platforms.",
-    technologies: ["Google Ads", "Meta Business", "Analytics", "A/B Testing"],
-    link: "#"
-  },
-  {
-    id: 6,
-    title: "AI Content Generator",
-    category: "API Development",
-    imageUrl: "https://via.placeholder.com/400x300/6366f1/ffffff?text=AI+Platform",
-    description: "AI-powered content generation platform with custom training models and multi-language support.",
-    technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL"],
-    link: "#"
-  }
 ];
 
 const GalleryShowcase: React.FC = () => {

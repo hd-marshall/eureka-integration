@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Footer: React.FC = () => {
   const footerContent = {
-    description: `Fusion Info Tech delivers reliable, scalable, and innovative software to help your business thrive. Trusted by industry leaders.`,
+    description: `Eureka Integration delivers reliable, scalable, and innovative software to help your business thrive. Trusted by industry leaders.`,
 
     productLinks: [
       { href: '/web-development', label: 'Web Development' },

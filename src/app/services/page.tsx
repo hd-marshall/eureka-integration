@@ -1,4 +1,4 @@
-// Services page for Fusion Info Tech
+// Services page for Eureka Integration
 
 export default function Services() {
     return (

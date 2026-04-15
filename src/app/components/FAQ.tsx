@@ -7,19 +7,19 @@ const FAQComponent: React.FC = () => {
 
   const faqData = [
     {
-      question: "What is Tech Fusion?",
-      answer: "Tech Fusion is a full-service software engineering company specialising in custom web applications, mobile development, and cloud infrastructure. We help businesses transform their ideas into scalable, robust software solutions by fusing cutting-edge technology with innovative design."
+      question: "What is Eureka Integration?",
+      answer: "Eureka Integration is a full-service software engineering company specialising in custom web applications, mobile development, and cloud infrastructure. We partner with businesses of all sizes to design, build, and deliver software that solves real problems and drives growth."
     },
     {
-      question: "What sets Tech Fusion apart? How would you describe your methodology?",
-      answer: "Our methodology combines agile development practices with a design-first approach. We prioritise clean, maintainable code, comprehensive testing, and continuous integration. Our team follows industry best practices including code reviews, automated testing, and iterative development to ensure high-quality deliverables."
+      question: "Who do you typically work with?",
+      answer: "We work with startups, SMEs, and larger enterprises across a range of industries. This includes businesses building their first digital product, companies looking to modernise legacy systems, and organisations that need a trusted technical partner to deliver software on their behalf."
     },
     {
       question: "What services do you provide?",
       answer: "We offer full-stack web development, mobile app development (iOS/Android), cloud infrastructure setup and management, API development, database design, UI/UX design, DevOps services, and ongoing maintenance and support for existing applications."
     },
     {
-      question: "How does our development process work – will you walk me through it?",
+      question: "How does your development process work – will you walk me through it?",
       answer: "Our process starts with discovery and requirements gathering, followed by system architecture design, UI/UX mockups, development in iterative sprints, rigorous testing phases, deployment to production, and ongoing support. We maintain transparent communication throughout with regular demos and progress updates."
     },
     {
@@ -28,7 +28,7 @@ const FAQComponent: React.FC = () => {
     },
     {
       question: "What are the typical project timelines and costs?",
-      answer: "Project timelines vary from 6-8 weeks for simple applications to 6+ months for complex enterprise solutions. Costs depend on scope, complexity, and features required. We provide detailed estimates after our discovery phase and offer both fixed-price and time-and-materials engagement models."
+      answer: "Project timelines vary from 6–8 weeks for simple applications to 6+ months for complex enterprise solutions. Costs depend on scope, complexity, and features required. We provide detailed estimates after our discovery phase and offer both fixed-price and time-and-materials engagement models."
     }
   ];
 

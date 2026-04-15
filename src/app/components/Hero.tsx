@@ -6,7 +6,7 @@ import ParticleAnimation from "./ui/ParticleAnimation"
 const Hero: React.FC = (): React.JSX.Element => {
   // Text content variables - easily changeable
   const heroTitle = "Empowering Companies with Software Solutions";
-  const heroSubtext = "Fusion Info Tech delivers reliable, scalable, and innovative software to help your business thrive. Trusted by industry leaders.";
+  const heroSubtext = "Eureka Integration delivers reliable, scalable, and innovative software to help your business thrive. Trusted by industry leaders.";
   const primaryButtonText = "Book a Call";
   const secondaryButtonText = "Our Services";
   

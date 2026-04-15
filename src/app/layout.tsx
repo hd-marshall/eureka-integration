@@ -43,9 +43,9 @@ const nunitoSans = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "Fusion Info Tech | Consulting & Software Development",
+  title: "Eureka Integration | Consulting & Software Development",
   description: "Professional consulting and software development services. Trusted by clients for reliability and expertise.",
-  keywords: ["consulting", "software development", "IT", "portfolio", "services", "Fusion Info Tech"],
+  keywords: ["consulting", "software development", "IT", "portfolio", "services", "Eureka Integration"],
 };
 
 export default async function RootLayout({ 
