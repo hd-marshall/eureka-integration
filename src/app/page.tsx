@@ -32,7 +32,7 @@ export default function Home() {
       <ProductShowcase />
 
       {/* White Label Brand Showcase */}
-      <BrandShowcase />
+      {/* <BrandShowcase /> */}
 
       {/* Services */}
       <Services />

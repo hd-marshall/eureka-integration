@@ -344,11 +344,8 @@ const ProductShowcase: React.FC = () => {
         <div className={`text-center mb-10 transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <span className="text-xs font-nunito-sans font-semibold text-brand-accent uppercase tracking-widest block mb-3">
-            Platform Features
-          </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-nunito-sans font-semibold text-brand-white mb-4">
-            See it in action
+            See it in Action
           </h2>
           <p className="text-base sm:text-lg font-nunito-sans text-brand-background max-w-2xl mx-auto">
             Everything your clients need to cut, order and manage materials, all running under your brand.
