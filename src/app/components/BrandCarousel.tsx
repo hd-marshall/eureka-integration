@@ -75,7 +75,7 @@ export default function MovingSlideShow({ images = [] }: MovingSlideShowProps) {
   return (
     <section className='bg-brand-background py-8'>
       {/* <h2 
-        className="font-eb-garamond text-brand-navy text-3xl md:text-4xl lg:text-5xl text-center font-semibold mb-8"
+        className="font-nunito-sans text-brand-navy text-3xl md:text-4xl lg:text-5xl text-center font-semibold mb-8"
         style={{
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
         }}

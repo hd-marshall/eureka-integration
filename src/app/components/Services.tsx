@@ -40,18 +40,18 @@ const services: Service[] = [
     rightImage: "",
     buttonLabel: "API Dev"
   },
-  {
-    id: 3,
-    title: "Mobile",
-    emphasis: "Development",
-    subtitle: "Native & Cross-Platform Apps.",
-    chapter: "iOS & Android",
-    page: "APPS",
-    description: "Create stunning mobile experiences that users love. From native iOS and Android apps to cross-platform solutions with React Native or Flutter, we deliver high-performance applications that work flawlessly across all devices.",
-    leftImage: "",
-    rightImage: "",
-    buttonLabel: "Mobile Dev"
-  },
+  // {
+  //   id: 3,
+  //   title: "Mobile",
+  //   emphasis: "Development",
+  //   subtitle: "Native & Cross-Platform Apps.",
+  //   chapter: "iOS & Android",
+  //   page: "APPS",
+  //   description: "Create stunning mobile experiences that users love. From native iOS and Android apps to cross-platform solutions with React Native or Flutter, we deliver high-performance applications that work flawlessly across all devices.",
+  //   leftImage: "",
+  //   rightImage: "",
+  //   buttonLabel: "Mobile Dev"
+  // },
   {
     id: 4,
     title: "Digital",
@@ -112,18 +112,19 @@ const ServicesSlider: React.FC = () => {
   return (
     <div 
       ref={containerRef}
-      className="w-full min-h-screen bg-brand-navy flex flex-col items-center justify-center pt-8 pb-16 md:py-0"
+      className="w-full min-h-screen bg-brand-background flex flex-col items-center justify-center pt-8 pb-16 md:py-0"
       id='services'
     >
       <div className={`w-full max-w-7xl px-4 transition-all duration-700 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}>
         {/* Title with fade and slide animation */}
-        <h2 className={`text-3xl md:text-4xl lg:text-5xl font-eb-garamond font-semibold text-white mb-6 md:mb-8 text-center transition-all duration-700 delay-100 ${
+        <h2 className={`text-3xl md:text-4xl lg:text-5xl font-nunito-sans font-semibold text-brand-navy mb-6 md:mb-8 text-center transition-all duration-700 delay-100 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           Our Services
         </h2>
+
         
         {/* Service Navigation Buttons with staggered animation */}
         <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-10">
@@ -131,10 +132,10 @@ const ServicesSlider: React.FC = () => {
             <button
               key={service.id}
               onClick={() => handleServiceChange(index)}
-              className={`px-8 py-3 rounded-lg font-semibold text-xs md:text-sm transition-all hover:cursor-pointer hover:-translate-y-0.5 font-nunito-sans ${
+              className={`px-8 py-3 rounded-lg font-semibold text-xs md:text-sm transition-all cursor-pointer hover:-translate-y-0.5 font-nunito-sans ${
                 currentSlide === index
-                  ? 'bg-brand-accent text-white border-2 border-brand-white hover:shadow-lg'
-                  : 'bg-transparent text-white border-2 border-white hover:bg-brand-accent hover:text-white hover:border-brand-white'
+                  ? 'bg-brand-navy text-white border-2 border-brand-navy'
+                  : 'bg-transparent text-brand-navy border-2 border-brand-navy hover:bg-brand-accent hover:text-white'
               } ${
                 isVisible 
                   ? 'translate-y-0 opacity-100' 
@@ -167,19 +168,19 @@ const ServicesSlider: React.FC = () => {
               }`}
             >
               {/* Left Side - Main Content */}
-              <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden bg-brand-background md:border-l-4 border-brand-accent">
+              <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden bg-brand-navy md:border-l-4 border-brand-accent">
                 {/* Animated content */}
-                <div className={`relative h-full flex flex-col justify-center px-8 md:px-16 pt-12 md:pt-16 text-brand-navy transition-all duration-700 delay-150 ${
+                <div className={`relative h-full flex flex-col justify-center px-8 md:px-16 pt-12 md:pt-16 text-brand-white transition-all duration-700 delay-150 ${
                   currentSlide === index && isVisible
                     ? 'translate-y-0 opacity-100' 
                     : '-translate-y-10 opacity-0'
                 }`}>
-                  <h2 className="text-4xl md:text-6xl font-eb-garamond font-light leading-tight">
+                  <h2 className="text-4xl md:text-6xl font-nunito-sans font-light leading-tight">
                     {service.title} <span className="italic">{service.emphasis}</span>.
                     <br />
                     <span className="text-3xl md:text-4xl">{service.subtitle}</span>
                   </h2>
-                  <p className="text-xs uppercase tracking-[0.1em] text-brand-navy/80 mt-8 md:mt-auto mb-8 md:mb-16 font-nunito-sans">
+                  <p className="text-xs uppercase tracking-[0.1em] text-brand-background/80 mt-8 md:mt-auto mb-8 md:mb-16 font-nunito-sans">
                     {service.chapter}, {service.page}
                   </p>
                 </div>
@@ -193,7 +194,7 @@ const ServicesSlider: React.FC = () => {
                     ? 'translate-y-0 opacity-100' 
                     : 'translate-y-10 opacity-0'
                 }`}>
-                  <p className="text-gray-800 text-base md:text-lg leading-relaxed max-w-md font-nunito-sans font-light">
+                  <p className="text-brand-navy text-base md:text-lg leading-relaxed max-w-md font-nunito-sans font-light">
                     {service.description}
                   </p>
                 </div>

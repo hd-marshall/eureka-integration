@@ -120,7 +120,7 @@ const SoftwareDevelopmentProcess: React.FC = (): React.JSX.Element => {
         
         {/* Section Title */}
         <div className="text-center mb-8">
-          <h2 className="font-eb-garamond text-3xl md:text-4xl lg:text-5xl font-semibold text-white">
+          <h2 className="font-nunito-sans text-3xl md:text-4xl lg:text-5xl font-semibold text-white">
             Our Process
           </h2>
         </div>
@@ -142,7 +142,7 @@ const SoftwareDevelopmentProcess: React.FC = (): React.JSX.Element => {
                 <div className="absolute left-0 top-0 w-1 h-full bg-brand-accent"></div>
                 
                 {/* Title */}
-                <h2 className="text-xl font-bold text-black mb-8 tracking-wide font-eb-garamond">
+                <h2 className="text-xl font-bold text-black mb-8 tracking-wide font-nunito-sans">
                   {process.title}
                 </h2>
                 
@@ -162,7 +162,7 @@ const SoftwareDevelopmentProcess: React.FC = (): React.JSX.Element => {
                 </ul>
                 
                 {/* Large Roman Numeral at bottom */}
-                <div className="absolute bottom-6 left-6 text-5xl font-light text-black font-eb-garamond">
+                <div className="absolute bottom-6 left-6 text-5xl font-light text-black font-nunito-sans">
                   {process.step}
                 </div>
               </div>
@@ -189,7 +189,7 @@ const SoftwareDevelopmentProcess: React.FC = (): React.JSX.Element => {
                 <div className="absolute left-0 top-0 w-1 h-full bg-brand-accent"></div>
                 
                 {/* Title */}
-                <h2 className="text-lg font-bold text-black mb-6 tracking-wide font-eb-garamond">
+                <h2 className="text-lg font-bold text-black mb-6 tracking-wide font-nunito-sans">
                   {process.title}
                 </h2>
                 
@@ -209,7 +209,7 @@ const SoftwareDevelopmentProcess: React.FC = (): React.JSX.Element => {
                 </ul>
                 
                 {/* Large Roman Numeral at bottom */}
-                <div className="absolute bottom-4 left-6 text-4xl font-light text-black font-eb-garamond">
+                <div className="absolute bottom-4 left-6 text-4xl font-light text-black font-nunito-sans">
                   {process.step}
                 </div>
               </div>
@@ -222,7 +222,7 @@ const SoftwareDevelopmentProcess: React.FC = (): React.JSX.Element => {
               <button
                 key={index}
                 onClick={() => scrollToCard(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
                   currentCard === index 
                     ? 'bg-brand-accent w-8' 
                     : 'bg-white/40 hover:bg-white/60'

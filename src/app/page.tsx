@@ -4,6 +4,8 @@ import { PageWrapper } from "./components/PageWrapper";
 import Hero from "./components/Hero";
 import Services from "./components/Services"
 import ProjectPortfolio from './components/ProjectPortfolio'
+import ProductShowcase from './components/ProductShowcase'
+import BrandShowcase from './components/BrandShowcase'
 import BrandCarousel from "./components/BrandCarousel"
 import OurProcess from "./components/OurProcess"
 import ContactForm from "./components/ContactForm"
@@ -23,11 +25,17 @@ export default function Home() {
       {/* Hero Section */}
       <Hero/>
 
-      {/* Services */}
-      <Services />
-
       {/* Portfolio Showcase */}
       <ProjectPortfolio />
+
+      {/* Product Feature Showcase */}
+      <ProductShowcase />
+
+      {/* White Label Brand Showcase */}
+      <BrandShowcase />
+
+      {/* Services */}
+      <Services />
 
       {/* Using Trusted Brands */}
       <BrandCarousel images={brandImages}/>

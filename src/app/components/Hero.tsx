@@ -5,7 +5,7 @@ import ParticleAnimation from "./ui/ParticleAnimation"
 
 const Hero: React.FC = (): React.JSX.Element => {
   // Text content variables - easily changeable
-  const heroTitle = "Empowering Companies with Software Solutions";
+  const heroTitle = "Connecting all the Pieces";
   const heroSubtext = "Eureka Integration delivers reliable, scalable, and innovative software to help your business thrive. Trusted by industry leaders.";
   const primaryButtonText = "Book a Call";
   const secondaryButtonText = "Our Services";
@@ -106,7 +106,7 @@ const Hero: React.FC = (): React.JSX.Element => {
       {/* Main content - absolutely positioned with higher z-index */}
       <div className="absolute top-[40%] left-0 transform -translate-y-1/2 w-full lg:w-[55%] md:w-[65%] px-4 sm:px-10 md:px-8 lg:px-16 z-10">
         {/* Main heading */}
-        <h1 className="font-eb-garamond text-3xl md:text-4xl lg:text-5xl max-sm:text-center font-bold text-brand-navy leading-tight mb-6">
+        <h1 className="font-nunito-sans text-3xl md:text-4xl lg:text-5xl max-sm:text-center font-bold text-brand-navy leading-tight mb-6">
           {heroTitle}
         </h1>
         
@@ -117,10 +117,10 @@ const Hero: React.FC = (): React.JSX.Element => {
         
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 z-20 relative">
-          <button className="border-2 border-brand-navy bg-brand-background text-brand-navy px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white hover:cursor-pointer transition-all duration-200 hover:-translate-y-0.5 z-20 relative">
+          <button className="font-nunito-sans border-2 border-brand-navy bg-brand-background text-brand-navy px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white cursor-pointer transition-all duration-200 hover:-translate-y-0.5 z-20 relative">
             {secondaryButtonText}
           </button>
-          <button className="border-2 border-brand-navy bg-brand-navy text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white hover:shadow-lg hover:cursor-pointer transition-all duration-200 hover:-translate-y-0.5 z-20 relative">
+          <button className="font-nunito-sans border-2 border-brand-navy bg-brand-navy text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white hover:shadow-lg cursor-pointer transition-all duration-200 hover:-translate-y-0.5 z-20 relative">
             {primaryButtonText}
           </button>
         </div>
@@ -131,7 +131,7 @@ const Hero: React.FC = (): React.JSX.Element => {
           {stats.map((stat, index) => (
             <React.Fragment key={index}>
               <div className="text-center">
-                <div className="font-eb-garamond text-xl md:text-2xl lg:text-3xl font-bold text-brand-navy mb-2">
+                <div className="font-nunito-sans text-xl md:text-2xl lg:text-3xl font-bold text-brand-navy mb-2">
                   {(() => {
                     const value = animatedStats[index];
                     
@@ -147,7 +147,7 @@ const Hero: React.FC = (): React.JSX.Element => {
                     }
                   })()}
                 </div>
-                <div className="font-nunito-sans text-sm md:text-base text-gray-600 font-medium">
+                <div className="font-nunito-sans text-sm md:text-base text-brand-blue font-medium">
                   {stat.label}
                 </div>
               </div>

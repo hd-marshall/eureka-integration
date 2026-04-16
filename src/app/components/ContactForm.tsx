@@ -93,7 +93,7 @@ const SupportTicketForm: React.FC = () => {
       <div className="max-w-3xl mx-auto relative">
         {/* Header */}
         <div className="text-center mb-8 relative z-10">
-          <h2 className="font-eb-garamond text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-navy mb-4">
+          <h2 className="font-nunito-sans text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-navy mb-4">
             Need Help? Open a Ticket
           </h2>
           <p className="font-nunito-sans text-lg text-gray-600">
@@ -235,7 +235,7 @@ const SupportTicketForm: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="border-2 border-brand-navy bg-brand-navy text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white hover:shadow-lg hover:cursor-pointer hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-nunito-sans"
+              className="border-2 border-brand-navy bg-brand-navy text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white hover:shadow-lg cursor-pointer hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-nunito-sans"
             >
               {isSubmitting ? 'Submitting...' : 'Submit Ticket'}
             </button>

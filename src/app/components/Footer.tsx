@@ -42,12 +42,12 @@ const Footer: React.FC = () => {
           <div className="border border-gray-400 p-6 flex flex-col items-center justify-center text-center space-y-6">
             <Image
               src="/logo-placeholder.png"
-              alt="Tech Fusion Logo"
+              alt="Eureka Integration Logo"
               width={60}
               height={60}
               className="object-contain"
             />
-            <h2 className="font-eb-garamond text-white text-2xl font-light">Tech Fusion</h2>
+            <h2 className="font-nunito-sans text-white text-2xl font-light">Eureka Integration</h2>
             <p className="font-nunito-sans text-sm leading-relaxed">{footerContent.description}</p>
           </div>
 
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               {/* Product Column */}
               <div className="flex flex-col justify-between">
                 <div>
-                  <h3 className="text-gray-500 text-sm font-medium mb-4 uppercase tracking-wider font-eb-garamond">
+                  <h3 className="text-gray-500 text-sm font-medium mb-4 uppercase tracking-wider font-nunito-sans">
                     PRODUCT
                   </h3>
                   <ul className="space-y-3">
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
                 <div className="mt-12">
                   <Link
                     href={footerContent.miscLinks.documentation.href}
-                    className="font-eb-garamond text-gray-500 hover:text-white transition-colors"
+                    className="font-nunito-sans text-gray-500 hover:text-white transition-colors"
                   >
                     {footerContent.miscLinks.documentation.label}
                   </Link>
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
               {/* General Column */}
               <div className="flex flex-col justify-between">
                 <div>
-                  <h3 className="font-eb-garamond text-gray-500 text-sm font-medium mb-4 uppercase tracking-wider">
+                  <h3 className="font-nunito-sans text-gray-500 text-sm font-medium mb-4 uppercase tracking-wider">
                     GENERAL
                   </h3>
                   <ul className="space-y-3">
@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
                 <div className="mt-12">
                   <Link
                     href={footerContent.miscLinks.privacy.href}
-                    className="font-eb-garamond text-gray-500 hover:text-white transition-colors"
+                    className="font-nunito-sans text-gray-500 hover:text-white transition-colors"
                   >
                     {footerContent.miscLinks.privacy.label}
                   </Link>
@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
 
               {/* Social Column */}
               <div>
-                <h3 className="font-eb-garamond text-gray-500 text-sm font-medium mb-4 uppercase tracking-wider">
+                <h3 className="font-nunito-sans text-gray-500 text-sm font-medium mb-4 uppercase tracking-wider">
                   SOCIAL
                 </h3>
                 <ul className="space-y-3">
@@ -132,8 +132,8 @@ const Footer: React.FC = () => {
           </div>        
         </div>
       </div>
-      <div className='font-eb-garamond text-center pt-8'>            
-        <p>© {new Date().getFullYear()} Fusion Information Technology. All Rights Reserved.</p>
+      <div className='font-nunito-sans text-center pt-8'>            
+        <p>© {new Date().getFullYear()} Eureka Integration. All Rights Reserved.</p>
       </div>
     </footer>
   );
