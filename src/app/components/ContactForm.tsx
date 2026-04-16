@@ -48,15 +48,9 @@ const SupportTicketForm: React.FC = () => {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    const node = sectionRef.current;
+    if (node) observer.observe(node);
+    return () => { if (node) observer.unobserve(node); };
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

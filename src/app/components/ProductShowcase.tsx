@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars sdjf 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CartPanel: React.FC = () => (
   <div className="p-5 bg-gray-50 font-nunito-sans h-full">
     <div className="flex items-center justify-between mb-4">
@@ -156,11 +157,9 @@ const features: Feature[] = [
       'Kerf width is built in on every cut so your pieces come out the right size',
     ],
     content: (
-      <img
-        src="/images/website-showcase/1d-stock-cutting.webp"
-        alt="1D linear stock cutting"
-        className="w-full h-full object-cover object-top"
-      />
+      <div className="relative w-full h-full">
+        <Image src="/images/website-showcase/1d-stock-cutting.webp" alt="1D linear stock cutting" fill className="object-cover object-top" />
+      </div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -180,11 +179,7 @@ const features: Feature[] = [
       'Grain direction, edge clearance and kerf are all handled',
     ],
     content: (
-      <img
-        src="/images/website-showcase/2d-stock-cutting.webp"
-        alt="2D sheet cutting"
-        className="w-full h-full object-cover object-top"
-      />
+      <div className="relative w-full h-full"><Image src="/images/website-showcase/2d-stock-cutting.webp" alt="2D sheet cutting" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -204,11 +199,7 @@ const features: Feature[] = [
       'Cut count is shown in the order summary so customers understand exactly what they are paying for',
     ],
     content: (
-      <img
-        src="/images/website-showcase/cart-dynamic-pricing.webp"
-        alt="Cart with dynamic pricing"
-        className="w-full h-full object-cover object-top"
-      />
+      <div className="relative w-full h-full"><Image src="/images/website-showcase/cart-dynamic-pricing.webp" alt="Cart with dynamic pricing" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -228,11 +219,7 @@ const features: Feature[] = [
       'Filter by date, material or customer to find any order quickly',
     ],
     content: (
-      <img
-        src="/images/website-showcase/orders-admin-dash.webp"
-        alt="Order management"
-        className="w-full h-full object-cover object-top"
-      />
+      <div className="relative w-full h-full"><Image src="/images/website-showcase/orders-admin-dash.webp" alt="Order management" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -252,11 +239,7 @@ const features: Feature[] = [
       'Changes go live on the customer side straight away with no rebuild needed',
     ],
     content: (
-      <img
-        src="/images/website-showcase/products-admin-dash.webp"
-        alt="Products and pricing"
-        className="w-full h-full object-cover object-top"
-      />
+      <div className="relative w-full h-full"><Image src="/images/website-showcase/products-admin-dash.webp" alt="Products and pricing" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -276,11 +259,7 @@ const features: Feature[] = [
       'Staff get their own login with access only to the parts they need',
     ],
     content: (
-      <img
-        src="/images/website-showcase/admin-dash.webp"
-        alt="Admin dashboard"
-        className="w-full h-full object-cover object-top"
-      />
+      <div className="relative w-full h-full"><Image src="/images/website-showcase/admin-dash.webp" alt="Admin dashboard" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -300,11 +279,7 @@ const features: Feature[] = [
       'Delivery addresses, contact details and email preferences are all managed through the account',
     ],
     content: (
-      <img
-        src="/images/website-showcase/account-login.webp"
-        alt="Account login and management"
-        className="w-full h-full object-cover object-top"
-      />
+      <div className="relative w-full h-full"><Image src="/images/website-showcase/account-login.webp" alt="Account login and management" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -427,7 +402,7 @@ const ProductShowcase: React.FC = () => {
             </div>
 
             {/* Content area */}
-            <div className="border border-brand-blue/30 border-t-0 rounded-b-lg overflow-hidden bg-white min-h-[360px]">
+            <div className="relative border border-brand-blue/30 border-t-0 rounded-b-lg overflow-hidden bg-white h-[420px]">
               {current.content}
             </div>
 

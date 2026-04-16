@@ -90,15 +90,9 @@ const ServicesSlider: React.FC = () => {
       }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
+    const node = containerRef.current;
+    if (node) observer.observe(node);
+    return () => { if (node) observer.unobserve(node); };
   }, [hasAnimated]);
 
   const handleServiceChange = (index: number) => {

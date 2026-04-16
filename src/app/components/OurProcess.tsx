@@ -73,36 +73,17 @@ const SoftwareDevelopmentProcess: React.FC = (): React.JSX.Element => {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    const node = sectionRef.current;
+    if (node) observer.observe(node);
+    return () => { if (node) observer.unobserve(node); };
   }, []);
 
   const scrollToCard = (cardIndex: number) => {
     if (scrollRef.current) {
       const cardWidth = scrollRef.current.scrollWidth / processSteps.length;
-      scrollRef.current.scrollTo({
-        left: cardIndex * cardWidth,
-        behavior: 'smooth'
-      });
+      scrollRef.current.scrollTo({ left: cardIndex * cardWidth, behavior: 'smooth' });
       setCurrentCard(cardIndex);
     }
-  };
-
-  const handlePrevious = () => {
-    const prevCard = currentCard > 0 ? currentCard - 1 : processSteps.length - 1;
-    scrollToCard(prevCard);
-  };
-
-  const handleNext = () => {
-    const nextCard = currentCard < processSteps.length - 1 ? currentCard + 1 : 0;
-    scrollToCard(nextCard);
   };
 
   const handleScroll = () => {

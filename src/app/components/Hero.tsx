@@ -19,10 +19,8 @@ const Hero: React.FC = (): React.JSX.Element => {
 
   // State for animated values - initialize with start values
   const [animatedStats, setAnimatedStats] = useState(stats.map(stat => stat.startValue));
-  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    setIsAnimating(true);
     
     const duration = 2500; // 2.5 seconds (longer for extreme slowdown effect)
     const steps = 80; // More steps for smoother final approach
@@ -90,12 +88,10 @@ const Hero: React.FC = (): React.JSX.Element => {
 
         if (step >= steps) {
           clearInterval(timer);
-          if (index === stats.length - 1) {
-            setIsAnimating(false);
-          }
         }
       }, stepDuration);
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -1,19 +1,13 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { type DeviceType } from '@/lib/clientDeviceDetection';
-
 const navLinks = [
   { name: 'About',    href: '#about'     },
   { name: 'Services', href: '#services'  },
   { name: 'Work',     href: '#portfolio' },
 ];
 
-interface NavbarProps {
-  serverDeviceType?: DeviceType;
-}
-
-export default function Navbar({ serverDeviceType: _ignored }: NavbarProps) {
+export default function Navbar(_props: { serverDeviceType?: string }) {
   const [menuOpen, setMenuOpen]   = useState(false);
   const [scrolled, setScrolled]   = useState(false);
 

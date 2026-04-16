@@ -1,6 +1,5 @@
 // Root layout for the Next.js app
 import type { Metadata } from "next";
-import { getServerDeviceType } from "@/lib/serverDeviceDetection";
 
 import "./globals.css";
 import localFont from 'next/font/local'
@@ -48,19 +47,15 @@ export const metadata: Metadata = {
   keywords: ["consulting", "software development", "IT", "portfolio", "services", "Eureka Integration"],
 };
 
-export default async function RootLayout({ 
-  children 
-}: { 
-  children: React.ReactNode 
+export default function RootLayout({
+  children
+}: {
+  children: React.ReactNode
 }) {
-  // Get server-side device detection
-  const serverDeviceType = await getServerDeviceType();
-
   return (
     <html lang="en" className={`${ebGaramond.variable} ${nunitoSans.variable}`}>
       <body className="bg-brand-background text-brand-navy min-h-screen flex flex-col">
-        {/* Header with hybrid device detection */}
-        <Navbar serverDeviceType={serverDeviceType} />
+        <Navbar />
         
         {/* Main content area */}
         <main className="flex-1 w-full mx-auto py-8">
