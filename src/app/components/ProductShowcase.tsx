@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars sdjf 
 const CartPanel: React.FC = () => (
   <div className="p-5 bg-gray-50 font-nunito-sans h-full">
     <div className="flex items-center justify-between mb-4">
