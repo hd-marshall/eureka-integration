@@ -3,15 +3,15 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Tech Fusion',
-  description: 'Privacy Policy for Tech Fusion - Learn how we collect, use, and protect your personal information.',
+  title: 'Privacy Policy | Eureka Integration',
+  description: 'Privacy Policy for Eureka Integration - Learn how we collect, use, and protect your personal information.',
 };
 
 const businessInfo = {
-  name: "Tech Fusion",
-  website: "techfusion.au",
+  name: "Eureka Integration",
+  website: "eurekaintegration.com",
   address: "N/a",
-  email: "fusiontechnologyau@gmail.com",
+  email: "info@eurekaintegration.com",
   phone: "N/a"
 };
 

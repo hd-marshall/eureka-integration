@@ -3,14 +3,14 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy | Tech Fusion',
-  description: 'Cookie Policy for Tech Fusion - Learn how we use cookies and related technologies on our website.',
+  title: 'Cookie Policy | Eureka Integration',
+  description: 'Cookie Policy for Eureka Integration - Learn how we use cookies and related technologies on our website.',
 };
 
 // Cookie Policy configuration - company info
 const businessInfo = {
-  name: "Tech Fusion",
-  website: "techfusion.au"
+  name: "Eureka Integration",
+  website: "eurekaintegration.com"
 };
 
 export default function CookiePolicy() {
