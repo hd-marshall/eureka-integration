@@ -7,7 +7,7 @@ const navLinks = [
   { name: 'Work',     href: '#portfolio' },
 ];
 
-export default function Navbar(_props: { serverDeviceType?: string }) {
+export default function Navbar() {
   const [menuOpen, setMenuOpen]   = useState(false);
   const [scrolled, setScrolled]   = useState(false);
 
