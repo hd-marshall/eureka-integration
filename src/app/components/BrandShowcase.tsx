@@ -222,7 +222,7 @@ const BrandShowcase: React.FC = () => {
             {/* Three setup points */}
             <div className="mt-8 grid grid-cols-1 gap-4">
               {[
-                ['Setup in under a week', 'Send us your logo, colours and domain. We handle the rest and hand it back ready to use.'],
+                ['Fast setup times', 'Send us your logo, colours and domain. We handle the rest and hand it back ready to use.'],
                 ['No trace of us anywhere', 'No powered-by footer, no our domain in the URL, no mention of Eureka Integration.'],
                 ['You own the client relationship', 'Your clients pay you, contact you, and stay with you. We are infrastructure.'],
               ].map(([title, body]) => (
@@ -264,6 +264,7 @@ const BrandShowcase: React.FC = () => {
                     src={palette.image}
                     alt={`${palette.name} white-label example`}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover object-top"
                   />
                 </div>

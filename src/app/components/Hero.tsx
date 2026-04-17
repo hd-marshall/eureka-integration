@@ -5,15 +5,15 @@ import ParticleAnimation from "./ui/ParticleAnimation"
 
 const Hero: React.FC = (): React.JSX.Element => {
   // Text content variables - easily changeable
-  const heroTitle = "Linking all pieces together";
-  const heroSubtext = "Optimised cutting creates as much value as possible, Informed customers understand the value you bring.";
-  const primaryButtonText = "Reach out to Us";
+  const heroTitle = "Fully Integrated. Completely Transparent";
+  const heroSubtext = "Deeply incorporated into your workflow, we make fabrication simple and pricing something you'll never have to second-guess";
+  const primaryButtonText = "Start a Partnership";
   const secondaryButtonText = "What we Do";
   
   // Stats data - easily changeable
   const stats = [
     { value: "3+", label: "Years Experience", target: 3, suffix: "+", startValue: 0 },
-    { value: "99.9%", label: "Up Time", target: 99.9, suffix: "%", startValue: 33 },
+    { value: "99.9%", label: "Server Up Time", target: 99.9, suffix: "%", startValue: 33 },
     { value: "100%", label: "Client Satisfaction", target: 100, suffix: "%", startValue: 33 }
   ];
 
