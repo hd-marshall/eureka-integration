@@ -131,16 +131,16 @@ const ParticleOrb: React.FC<ParticleOrbProps> = ({ className = '' }) => {
       let color;
       switch (colorIndex) {
         case 0:
-          color = '#1e3a8a'; // brand-navy
+          color = '#002147'; // brand-navy
           break;
         case 1:
-          color = '#3b82f6'; // brand-blue
+          color = '#1976D2'; // brand-accent
           break;
         case 2:
-          color = '#64748b'; // brand-muted
+          color = '#334771'; // brand-blue
           break;
         default:
-          color = '#3b82f6';
+          color = '#1976D2';
       }
 
       css += `

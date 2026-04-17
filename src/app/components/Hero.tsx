@@ -5,10 +5,10 @@ import ParticleAnimation from "./ui/ParticleAnimation"
 
 const Hero: React.FC = (): React.JSX.Element => {
   // Text content variables - easily changeable
-  const heroTitle = "Connecting all the Pieces";
-  const heroSubtext = "Eureka Integration delivers reliable, scalable, and innovative software to help your business thrive. Trusted by industry leaders.";
-  const primaryButtonText = "Book a Call";
-  const secondaryButtonText = "Our Services";
+  const heroTitle = "Linking all pieces together";
+  const heroSubtext = "Optimised cutting creates as much value as possible, Informed customers understand the value you bring.";
+  const primaryButtonText = "Reach out to Us";
+  const secondaryButtonText = "What we Do";
   
   // Stats data - easily changeable
   const stats = [

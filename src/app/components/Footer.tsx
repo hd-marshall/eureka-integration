@@ -3,10 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { brand } from '@/config/brand';
 
 const Footer: React.FC = () => {
   const footerContent = {
-    description: `Eureka Integration delivers reliable, scalable, and innovative software to help your business thrive. Trusted by industry leaders.`,
+    description: `${brand.name} — ${brand.tagline.toLowerCase()}. Built for the businesses that process, cut and supply material at scale.`,
 
     productLinks: [
       { href: '/web-development', label: 'Web Development' },
@@ -41,13 +42,13 @@ const Footer: React.FC = () => {
           {/* Tech Fusion Column */}
           <div className="border border-gray-400 p-6 flex flex-col items-center justify-center text-center space-y-6">
             <Image
-              src="/logo-placeholder.png"
-              alt="Eureka Integration Logo"
+              src={brand.logo}
+              alt={`${brand.name} Logo`}
               width={60}
               height={60}
               className="object-contain"
             />
-            <h2 className="font-nunito-sans text-white text-2xl font-light">Eureka Integration</h2>
+            <h2 className="font-nunito-sans text-white text-2xl font-light">{brand.name}</h2>
             <p className="font-nunito-sans text-sm leading-relaxed">{footerContent.description}</p>
           </div>
 
@@ -133,7 +134,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className='font-nunito-sans text-center pt-8'>            
-        <p>© {new Date().getFullYear()} Eureka Integration. All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} {brand.name}. All Rights Reserved.</p>
       </div>
     </footer>
   );

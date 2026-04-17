@@ -18,16 +18,16 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   
-  /* BRAND COLOURS */
-  --color-brand-navy: #002147;
-  --color-brand-blue: #334771;
-  --color-brand-accent: #1976D2;
-
-  --color-brand-background: #D8D1CE;
-  
-  --color-brand-border: #334771;
-  --color-brand-muted: #2E3A59;
-  --color-brand-white: #FFFFFF;
+  /* ── BRAND COLOURS ──────────────────────────────────────────────────────── */
+  /* To white-label: change these hex values AND the matching values          */
+  /* in src/config/brand.ts — that is the only change needed per client.      */
+  --color-brand-navy:       #002147;   /* Primary — dark navy                */
+  --color-brand-blue:       #334771;   /* Secondary — mid blue               */
+  --color-brand-accent:     #1976D2;   /* Accent — bright blue               */
+  --color-brand-background: #D8D1CE;   /* Page background — warm grey        */
+  --color-brand-border:     #334771;   /* Borders                            */
+  --color-brand-muted:      #2E3A59;   /* Muted text                        */
+  --color-brand-white:      #FFFFFF;   /* White                              */
   
   /* CUSTOM SHADOWS */
   --shadow-brand: 0 4px 14px 0 rgba(26,35,65,0.10);

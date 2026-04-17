@@ -1,5 +1,6 @@
 // Root layout for the Next.js app
 import type { Metadata } from "next";
+import { brand } from "@/config/brand";
 
 import "./globals.css";
 import localFont from 'next/font/local'
@@ -42,9 +43,9 @@ const nunitoSans = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "Eureka Integration | Consulting & Software Development",
-  description: "Professional consulting and software development services. Trusted by clients for reliability and expertise.",
-  keywords: ["consulting", "software development", "IT", "portfolio", "services", "Eureka Integration"],
+  title: `${brand.name} | ${brand.tagline}`,
+  description: `${brand.name} — white-label cutting optimisation software for material processors, stockholders and fabricators.`,
+  keywords: ['cutting optimisation', 'white label software', '1D cutting', '2D cutting', 'nesting software', brand.name],
 };
 
 export default function RootLayout({

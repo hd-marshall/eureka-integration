@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { brand } from '@/config/brand';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CartPanel: React.FC = () => (
@@ -148,7 +149,7 @@ const features: Feature[] = [
   {
     id: 'cutting-1d',
     label: '1D Linear Cutting',
-    url: 'app.yourbrand.com/cutting/linear',
+    url: `app.${brand.domain}/cutting/linear`,
     title: 'Fit More, Cut Less, Price It Right',
     description: 'Put in your lengths, pick your stock size, and it works out exactly how many bars you need and how many cuts that means. Use the cut count to build your pricing.',
     highlights: [
@@ -170,7 +171,7 @@ const features: Feature[] = [
   {
     id: 'cutting-2d',
     label: '2D Sheet Cutting',
-    url: 'app.yourbrand.com/cutting/sheet',
+    url: `app.${brand.domain}/cutting/sheet`,
     title: 'Know Your Sheets, Know Your Price',
     description: 'Add your piece sizes and the software figures out how they fit across your sheets. You get a clear layout, a sheet count, and the number of cuts needed to price the job properly.',
     highlights: [
@@ -190,7 +191,7 @@ const features: Feature[] = [
   {
     id: 'cart',
     label: 'Cart',
-    url: 'app.yourbrand.com/cart',
+    url: `app.${brand.domain}/cart`,
     title: 'Cart That Keeps Up With Changes',
     description: 'Customers can mix 1D and 2D cuts in the same order, adjust quantities, swap sizes, and the total updates straight away. No confusion at checkout.',
     highlights: [
@@ -210,7 +211,7 @@ const features: Feature[] = [
   {
     id: 'orders',
     label: 'Order Management',
-    url: 'admin.yourbrand.com/orders',
+    url: `admin.${brand.domain}/orders`,
     title: 'Orders Come In, Plans Go Out',
     description: 'Every order lands in one view with the cut plan attached. You can see what came in, what it needs, and where it is in the process.',
     highlights: [
@@ -230,7 +231,7 @@ const features: Feature[] = [
   {
     id: 'products',
     label: 'Products & Pricing',
-    url: 'admin.yourbrand.com/products',
+    url: `admin.${brand.domain}/products`,
     title: 'Your Catalogue, Your Prices',
     description: 'You set up the materials, you set the prices. Customers see what you want them to see, priced exactly how you charge for it.',
     highlights: [
@@ -250,7 +251,7 @@ const features: Feature[] = [
   {
     id: 'admin',
     label: 'Admin Dashboard',
-    url: 'admin.yourbrand.com/dashboard',
+    url: `admin.${brand.domain}/dashboard`,
     title: 'Everything in One Place',
     description: 'Revenue, open orders, stock levels and platform activity all on one screen. No digging around to find out what is going on.',
     highlights: [
@@ -270,7 +271,7 @@ const features: Feature[] = [
   {
     id: 'accounts',
     label: 'Account Management',
-    url: 'app.yourbrand.com/account',
+    url: `app.${brand.domain}/account`,
     title: 'Accounts for Every Customer',
     description: 'Customers log in and see their full order history, saved cut lists and account details. You can manage accounts from the admin side and set credit terms for trade customers.',
     highlights: [

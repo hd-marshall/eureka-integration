@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 interface Palette {
   name: string;
@@ -9,48 +10,36 @@ interface Palette {
   accent: string;
   bg: string;
   muted: string;
+  image?: string; // real screenshot from /public/images/white-label-examples/
 }
 
 const palettes: Palette[] = [
   {
-    name: 'Mitchell Steel',
+    name: 'Steel Co',
     industry: 'Steel Stockholder',
     primary: '#1E293B',
     accent: '#EA580C',
     bg: '#F9FAFB',
     muted: '#64748B',
+    image: '/images/white-label-examples/Steel-Co.webp',
   },
   {
-    name: 'Greenway Timber',
+    name: 'Woodlands Timber',
     industry: 'Timber Merchant',
-    primary: '#2D5016',
-    accent: '#8B5E3C',
-    bg: '#FAFAF7',
-    muted: '#6B7C5A',
+    primary: '#166534',
+    accent: '#d97706',
+    bg: '#f9fafb',
+    muted: '#92400e',
+    image: '/images/white-label-examples/Timber-CO.webp',
   },
   {
-    name: 'ClearCut Glass',
+    name: 'Clearview Glass',
     industry: 'Glass Processor',
-    primary: '#0C4A6E',
-    accent: '#0EA5E9',
-    bg: '#F0F9FF',
-    muted: '#0369A1',
-  },
-  {
-    name: 'Apex Fabrication',
-    industry: 'Metal Fabricator',
-    primary: '#27272A',
-    accent: '#EAB308',
-    bg: '#FAFAFA',
-    muted: '#71717A',
-  },
-  {
-    name: 'Boardroom Panels',
-    industry: 'Panel Supplier',
-    primary: '#4C1D95',
-    accent: '#7C3AED',
-    bg: '#FAF5FF',
-    muted: '#6D28D9',
+    primary: '#0f172a',
+    accent: '#0891b2',
+    bg: '#f9fafb',
+    muted: '#0e7490',
+    image: '/images/white-label-examples/Glass-Co.webp',
   },
 ];
 
@@ -248,14 +237,62 @@ const BrandShowcase: React.FC = () => {
             </div>
           </div>
 
-          {/* Right — live preview */}
+          {/* Right — screenshot or live preview */}
           <div className={`transition-all duration-700 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`} style={{ transitionDelay: isVisible ? '350ms' : '0ms' }}>
             <p className="text-xs font-nunito-sans font-semibold text-brand-blue uppercase tracking-widest mb-4">
-              Live preview — {palette.name}
+              Client example — {palette.name}
             </p>
-            <BrandPreview palette={palette} />
+
+            {palette.image ? (
+              /* Screenshot */
+              <div className="rounded-lg overflow-hidden border border-gray-200 shadow-xl">
+                {/* Browser chrome */}
+                <div className="bg-[#1e293b] px-3 py-2 flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"/>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]"/>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]"/>
+                  </div>
+                  <div className="flex-1 bg-[#0f172a] rounded px-2 py-0.5 text-[9px] text-gray-500 text-center">
+                    app.{palette.name.toLowerCase().replace(/\s/g, '')}.co.uk
+                  </div>
+                </div>
+                <div className="relative w-full" style={{ aspectRatio: '16/10' }}>
+                  <Image
+                    src={palette.image}
+                    alt={`${palette.name} white-label example`}
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+                {/* Palette strip below screenshot */}
+                <div className="bg-white px-4 py-3 flex items-center gap-3 border-t border-gray-100">
+                  <span className="text-[9px] font-nunito-sans text-gray-400 uppercase tracking-wider flex-shrink-0">Colours</span>
+                  <div className="flex gap-1.5 flex-wrap">
+                    {[palette.primary, palette.accent, palette.muted, palette.bg].map((c, i) => (
+                      <div key={i} title={c} className="w-5 h-5 rounded-sm shadow-sm border border-gray-100 flex-shrink-0" style={{ backgroundColor: c }}/>
+                    ))}
+                    {palette.name === 'Woodlands Timber' && (
+                      ['#14532d', '#dcfce7', '#78350f', '#b45309', '#65a30d'].map((c, i) => (
+                        <div key={i} title={c} className="w-5 h-5 rounded-sm shadow-sm border border-gray-100 flex-shrink-0" style={{ backgroundColor: c }}/>
+                      ))
+                    )}
+                    {palette.name === 'Steel Co' && (
+                      ['#334155', '#f1f5f9', '#1e293b', '#fb923c'].map((c, i) => (
+                        <div key={i} title={c} className="w-5 h-5 rounded-sm shadow-sm border border-gray-100 flex-shrink-0" style={{ backgroundColor: c }}/>
+                      ))
+                    )}
+                    {palette.name === 'Clearview Glass' && (
+                      ['#020617', '#0891b2', '#0e7490', '#7dd3fc', '#38bdf8', '#0ea5e9', '#ecfeff'].map((c, i) => (
+                        <div key={i} title={c} className="w-5 h-5 rounded-sm shadow-sm border border-gray-100 flex-shrink-0" style={{ backgroundColor: c }}/>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </div>
+            ) : null}
           </div>
         </div>
 

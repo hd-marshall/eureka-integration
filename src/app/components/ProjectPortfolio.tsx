@@ -21,12 +21,12 @@ const Sheet2D: React.FC = () => {
     { x: 236, y: 86,  w: 60, h: 50,  shade: 2 },
     // waste — bottom-right
   ];
-  const fills = ['#002147', '#1976D2', '#334771'];
+  const fills = ['var(--color-brand-navy)', 'var(--color-brand-accent)', 'var(--color-brand-blue)'];
 
   return (
     <svg viewBox="0 0 300 200" className="w-full h-full" aria-label="2D sheet cutting layout">
       {/* Sheet — background colour = waste area */}
-      <rect x={0} y={0} width={300} height={200} fill="#C4BDB9" stroke="#002147" strokeWidth={2} rx={2} />
+      <rect x={0} y={0} width={300} height={200} fill="var(--color-brand-background)" stroke="var(--color-brand-navy)" strokeWidth={2} rx={2} />
       {/* Optimised cut pieces */}
       {pieces.map((p, i) => (
         <rect
@@ -36,9 +36,9 @@ const Sheet2D: React.FC = () => {
       ))}
       {/* Waste indicator */}
       <rect x={236} y={140} width={60} height={56} fill="#C4BDB9"
-        stroke="#334771" strokeWidth={1} strokeDasharray="3 2" rx={1} />
-      <text x={266} y={161} textAnchor="middle" fontSize={7} fill="#334771" fontWeight="700">WASTE</text>
-      <text x={266} y={176} textAnchor="middle" fontSize={12} fill="#1976D2" fontWeight="800">6.7%</text>
+        stroke="var(--color-brand-blue)" strokeWidth={1} strokeDasharray="3 2" rx={1} />
+      <text x={266} y={161} textAnchor="middle" fontSize={7} fill="var(--color-brand-blue)" fontWeight="700">WASTE</text>
+      <text x={266} y={176} textAnchor="middle" fontSize={12} fill="var(--color-brand-accent)" fontWeight="800">6.7%</text>
     </svg>
   );
 };
@@ -47,7 +47,7 @@ const Sheet2D: React.FC = () => {
 interface BarSegment { w: number; label: string; }
 
 const Bar1D: React.FC = () => {
-  const fills = ['#002147', '#1976D2', '#334771', '#002147', '#1976D2'];
+  const fills = ['var(--color-brand-navy)', 'var(--color-brand-accent)', 'var(--color-brand-blue)', 'var(--color-brand-navy)', 'var(--color-brand-accent)'];
   const barH = 38;
   const gap  = 18;
 
@@ -81,7 +81,7 @@ const Bar1D: React.FC = () => {
           <g key={bi}>
             {/* Bar outline — full stock length */}
             <rect x={7} y={y} width={296} height={barH}
-              fill="#C4BDB9" stroke="#002147" strokeWidth={1.5} rx={3} />
+              fill="var(--color-brand-background)" stroke="var(--color-brand-navy)" strokeWidth={1.5} rx={3} />
             {bar.map((seg, ci) => {
               const segX = x;
               const segW = seg.w - 2;
@@ -145,7 +145,7 @@ const GalleryShowcase: React.FC = () => {
       title: 'White Label Ready',
       description: 'Delivered under your brand. Custom logo, domain, and colours — your clients never see our name.',
       icon: (
-        <svg className="w-7 h-7" fill="none" stroke="#1976D2" strokeWidth={1.5} viewBox="0 0 24 24">
+        <svg className="w-7 h-7" fill="none" stroke="var(--color-brand-accent)" strokeWidth={1.5} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round"
             d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
         </svg>
@@ -155,7 +155,7 @@ const GalleryShowcase: React.FC = () => {
       title: 'Instant Calculation',
       description: 'Cut plans generated in milliseconds, even for thousands of parts. No waiting, no server delays.',
       icon: (
-        <svg className="w-7 h-7" fill="none" stroke="#1976D2" strokeWidth={1.5} viewBox="0 0 24 24">
+        <svg className="w-7 h-7" fill="none" stroke="var(--color-brand-accent)" strokeWidth={1.5} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round"
             d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
         </svg>
@@ -165,7 +165,7 @@ const GalleryShowcase: React.FC = () => {
       title: 'Direct Customer Sales',
       description: 'Embed a customer-facing portal into your clients\' websites. End buyers enter their cut list and receive instant quotes — no sales rep required.',
       icon: (
-        <svg className="w-7 h-7" fill="none" stroke="#1976D2" strokeWidth={1.5} viewBox="0 0 24 24">
+        <svg className="w-7 h-7" fill="none" stroke="var(--color-brand-accent)" strokeWidth={1.5} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round"
             d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
         </svg>

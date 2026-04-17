@@ -1,11 +1,9 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-const navLinks = [
-  { name: 'About',    href: '#about'     },
-  { name: 'Services', href: '#services'  },
-  { name: 'Work',     href: '#portfolio' },
-];
+import { brand } from '@/config/brand';
+
+const navLinks = brand.nav;
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen]   = useState(false);
@@ -58,7 +56,7 @@ export default function Navbar() {
             href="/"
             className="font-nunito-sans text-brand-white text-xl sm:text-2xl font-semibold tracking-wide hover:text-brand-accent transition-colors duration-200 shrink-0"
           >
-            Eureka Integration
+            {brand.name}
           </Link>
 
           {/* Desktop nav */}
