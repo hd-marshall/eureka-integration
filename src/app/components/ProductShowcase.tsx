@@ -158,7 +158,7 @@ const features: Feature[] = [
       'Kerf width is built in on every cut so your pieces come out the right size',
     ],
     content: (
-      <div className="relative w-full h-full">
+      <div className="absolute inset-0">
         <Image src="/images/website-showcase/1d-stock-cutting.webp" alt="1D linear stock cutting" fill className="object-cover object-top" />
       </div>
     ),
@@ -180,7 +180,7 @@ const features: Feature[] = [
       'Grain direction, edge clearance and kerf are all handled',
     ],
     content: (
-      <div className="relative w-full h-full"><Image src="/images/website-showcase/2d-stock-cutting.webp" alt="2D sheet cutting" fill className="object-cover object-top" /></div>
+      <div className="absolute inset-0"><Image src="/images/website-showcase/2d-stock-cutting.webp" alt="2D sheet cutting" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -200,7 +200,7 @@ const features: Feature[] = [
       'Cut count is shown in the order summary so customers understand exactly what they are paying for',
     ],
     content: (
-      <div className="relative w-full h-full"><Image src="/images/website-showcase/cart-dynamic-pricing.webp" alt="Cart with dynamic pricing" fill className="object-cover object-top" /></div>
+      <div className="absolute inset-0"><Image src="/images/website-showcase/cart-dynamic-pricing.webp" alt="Cart with dynamic pricing" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -220,7 +220,7 @@ const features: Feature[] = [
       'Filter by date, material or customer to find any order quickly',
     ],
     content: (
-      <div className="relative w-full h-full"><Image src="/images/website-showcase/orders-admin-dash.webp" alt="Order management" fill className="object-cover object-top" /></div>
+      <div className="absolute inset-0"><Image src="/images/website-showcase/orders-admin-dash.webp" alt="Order management" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -240,7 +240,7 @@ const features: Feature[] = [
       'Changes go live on the customer side straight away with no rebuild needed',
     ],
     content: (
-      <div className="relative w-full h-full"><Image src="/images/website-showcase/products-admin-dash.webp" alt="Products and pricing" fill className="object-cover object-top" /></div>
+      <div className="absolute inset-0"><Image src="/images/website-showcase/products-admin-dash.webp" alt="Products and pricing" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -260,7 +260,7 @@ const features: Feature[] = [
       'Staff get their own login with access only to the parts they need',
     ],
     content: (
-      <div className="relative w-full h-full"><Image src="/images/website-showcase/admin-dash.webp" alt="Admin dashboard" fill className="object-cover object-top" /></div>
+      <div className="absolute inset-0"><Image src="/images/website-showcase/admin-dash.webp" alt="Admin dashboard" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -280,7 +280,7 @@ const features: Feature[] = [
       'Delivery addresses, contact details and email preferences are all managed through the account',
     ],
     content: (
-      <div className="relative w-full h-full"><Image src="/images/website-showcase/account-login.webp" alt="Account login and management" fill className="object-cover object-top" /></div>
+      <div className="absolute inset-0"><Image src="/images/website-showcase/account-login.webp" alt="Account login and management" fill className="object-cover object-top" /></div>
     ),
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -402,8 +402,8 @@ const ProductShowcase: React.FC = () => {
               </div>
             </div>
 
-            {/* Content area */}
-            <div className="relative border border-brand-blue/30 border-t-0 rounded-b-lg overflow-hidden bg-white h-[420px]">
+            {/* Content area — aspect ratio scales with screen width on mobile */}
+            <div className="relative border border-brand-blue/30 border-t-0 rounded-b-lg overflow-hidden bg-white aspect-[16/10]">
               {current.content}
             </div>
 

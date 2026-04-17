@@ -17,6 +17,24 @@ const Hero: React.FC = (): React.JSX.Element => {
     { value: "100%", label: "Client Satisfaction", target: 100, suffix: "%", startValue: 33 }
   ];
 
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const start = window.scrollY;
+    const target = el.getBoundingClientRect().top + start;
+    const dist = target - start;
+    const dur = 1200;
+    let t0: number | null = null;
+    const step = (t: number) => {
+      if (!t0) t0 = t;
+      const p = Math.min((t - t0) / dur, 1);
+      const ease = p < 0.5 ? 4 * p ** 3 : 1 - (-2 * p + 2) ** 3 / 2;
+      window.scrollTo(0, start + dist * ease);
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
   // State for animated values - initialize with start values
   const [animatedStats, setAnimatedStats] = useState(stats.map(stat => stat.startValue));
 
@@ -113,10 +131,16 @@ const Hero: React.FC = (): React.JSX.Element => {
         
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 z-20 relative">
-          <button className="font-nunito-sans border-2 border-brand-navy bg-brand-background text-brand-navy px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white cursor-pointer transition-all duration-200 hover:-translate-y-0.5 z-20 relative">
+          <button
+            onClick={() => scrollTo('services')}
+            className="font-nunito-sans border-2 border-brand-navy bg-brand-background text-brand-navy px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white cursor-pointer transition-all duration-200 hover:-translate-y-0.5 z-20 relative"
+          >
             {secondaryButtonText}
           </button>
-          <button className="font-nunito-sans border-2 border-brand-navy bg-brand-navy text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white hover:shadow-lg cursor-pointer transition-all duration-200 hover:-translate-y-0.5 z-20 relative">
+          <button
+            onClick={() => scrollTo('contact')}
+            className="font-nunito-sans border-2 border-brand-navy bg-brand-navy text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white hover:shadow-lg cursor-pointer transition-all duration-200 hover:-translate-y-0.5 z-20 relative"
+          >
             {primaryButtonText}
           </button>
         </div>

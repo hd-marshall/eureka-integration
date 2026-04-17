@@ -96,7 +96,7 @@ const SoftwareDevelopmentProcess: React.FC = (): React.JSX.Element => {
   };
 
   return (
-    <section ref={sectionRef} className="bg-brand-navy py-16 px-6 flex items-center mt-4">
+    <section ref={sectionRef} className="bg-brand-navy py-16 px-6 flex items-center mt-4" id="process">
       <div className="max-w-7xl mx-auto w-full">
         
         {/* Section Title */}

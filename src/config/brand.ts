@@ -34,9 +34,10 @@ export const brand = {
 
   // ── Navigation ─────────────────────────────────────────────────────────────
   nav: [
-    { name: 'About',    href: '#about'     },
-    { name: 'Services', href: '#services'  },
-    { name: 'Work',     href: '#portfolio' },
+    { name: 'Our Specialisation', href: '#portfolio'   },
+    { name: 'The Platform',       href: '#showcase'    },
+    { name: 'White Label',        href: '#white-label' },
+    { name: 'Services',           href: '#services'    },
   ],
 
   // ── Footer links ───────────────────────────────────────────────────────────
