@@ -159,9 +159,6 @@ const BrandShowcase: React.FC = () => {
         <div className={`mb-12 transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <span className="text-xs font-nunito-sans font-semibold text-brand-accent uppercase tracking-widest block mb-3">
-            White Label
-          </span>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-nunito-sans font-semibold text-brand-navy leading-tight">
               Your brand, not ours.
