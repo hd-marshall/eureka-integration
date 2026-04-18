@@ -1,3 +1,5 @@
+"use client";
+
 // components/Footer.tsx
 
 import React from 'react';
@@ -47,6 +49,7 @@ const Footer: React.FC = () => {
               width={60}
               height={60}
               className="object-contain"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
             <h2 className="font-nunito-sans text-white text-2xl font-light">{brand.name}</h2>
             <p className="font-nunito-sans text-sm leading-relaxed">{footerContent.description}</p>

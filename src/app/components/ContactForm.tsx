@@ -7,7 +7,8 @@ interface FormData {
   lastName: string;
   email: string;
   phoneNumber: string;
-  service: string;
+  industry: string;
+  howDidYouFindUs: string;
   message: string;
 }
 
@@ -17,7 +18,8 @@ const SupportTicketForm: React.FC = () => {
     lastName: '',
     email: '',
     phoneNumber: '',
-    service: '',
+    industry: '',
+    howDidYouFindUs: '',
     message: ''
   });
 
@@ -25,10 +27,30 @@ const SupportTicketForm: React.FC = () => {
   const [dotsAnimated, setDotsAnimated] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const services = [
-    'Web Development',
-    'App Development',
-    'Digital Marketing'
+  const industries = [
+    'Sheet Metal Fabrication',
+    'Woodworking & Joinery',
+    'Glass Cutting',
+    'Aluminium & Steel Distribution',
+    'Plastic Fabrication',
+    'Textile & Apparel Manufacturing',
+    'Sign Making & Engraving',
+    'Packaging & Cardboard',
+    'Stone & Tile Cutting',
+    'Foam & Rubber Manufacturing',
+    'Aerospace & Defence',
+    'Automotive Manufacturing',
+    'Other'
+  ];
+
+  const howDidYouFindUsOptions = [
+    'Google Search',
+    'Social Media',
+    'Referral from a Friend',
+    'LinkedIn',
+    'Online Advertisement',
+    'Word of Mouth',
+    'Other'
   ];
 
   // Intersection Observer for dots animation
@@ -75,7 +97,8 @@ const SupportTicketForm: React.FC = () => {
         lastName: '',
         email: '',
         phoneNumber: '',
-        service: '',
+        industry: '',
+        howDidYouFindUs: '',
         message: ''
       });
     }, 1000);
@@ -88,7 +111,7 @@ const SupportTicketForm: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-8 relative z-10">
           <h2 className="font-nunito-sans text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-navy mb-4">
-            Need Help? Open a Ticket
+            Let's start a Partnership
           </h2>
           <p className="font-nunito-sans text-lg text-gray-600">
             Submit Your Support Ticket, We will be with you as soon as we are able.
@@ -185,26 +208,48 @@ const SupportTicketForm: React.FC = () => {
             </div>
           </div>
 
-          {/* Service dropdown */}
-          <div className="mb-6">
-            <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2 font-nunito-sans">
-              Service Type
-            </label>
-            <select
-              id="service"
-              name="service"
-              value={formData.service}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition appearance-none bg-white font-nunito-sans"
-            >
-              <option value="" disabled>Select a service</option>
-              {services.map((service) => (
-                <option key={service} value={service}>
-                  {service}
-                </option>
-              ))}
-            </select>
+          {/* Industry and How Did You Find Us row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label htmlFor="industry" className="block text-sm font-medium text-gray-700 mb-2 font-nunito-sans">
+                Industry
+              </label>
+              <select
+                id="industry"
+                name="industry"
+                value={formData.industry}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition appearance-none bg-white font-nunito-sans"
+              >
+                <option value="" disabled>Select your industry</option>
+                {industries.map((industry) => (
+                  <option key={industry} value={industry}>
+                    {industry}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="howDidYouFindUs" className="block text-sm font-medium text-gray-700 mb-2 font-nunito-sans">
+                How did you find us?
+              </label>
+              <select
+                id="howDidYouFindUs"
+                name="howDidYouFindUs"
+                value={formData.howDidYouFindUs}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition appearance-none bg-white font-nunito-sans"
+              >
+                <option value="" disabled>Select an option</option>
+                {howDidYouFindUsOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
           {/* Message field */}
