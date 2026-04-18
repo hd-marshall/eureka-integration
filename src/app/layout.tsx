@@ -46,6 +46,11 @@ export const metadata: Metadata = {
   title: `${brand.name} | ${brand.tagline}`,
   description: `${brand.name} — white-label cutting optimisation software for material processors, stockholders and fabricators.`,
   keywords: ['cutting optimisation', 'white label software', '1D cutting', '2D cutting', 'nesting software', brand.name],
+  icons: {
+    icon: '/images/logo/blue-eureka-integration-logo.png',
+    shortcut: '/images/logo/blue-eureka-integration-logo.png',
+    apple: '/images/logo/blue-eureka-integration-logo.png',
+  },
 };
 
 export default function RootLayout({
