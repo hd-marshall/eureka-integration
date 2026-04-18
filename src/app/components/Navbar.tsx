@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { brand } from '@/config/brand';
 
 const navLinks = brand.nav;
@@ -61,10 +62,19 @@ export default function Navbar() {
             {/* Wordmark */}
             <Link
               href="/"
-              className={`font-nunito-sans text-xl sm:text-2xl font-semibold tracking-wide hover:text-brand-accent transition-colors duration-200 shrink-0 ${
+              className={`flex items-center gap-2.5 font-nunito-sans text-xl sm:text-2xl font-semibold tracking-wide hover:text-brand-accent transition-colors duration-200 shrink-0 ${
                 scrolled ? 'text-white' : 'text-brand-navy'
               }`}
             >
+              <Image
+                src={scrolled ? '/images/logo/white-eureka-integration-logo.png' : '/images/logo/blue-eureka-integration-logo.png'}
+                alt={`${brand.name} logo`}
+                width={0}
+                height={0}
+                sizes="32px"
+                style={{ width: '32px', height: 'auto' }}
+                className="object-contain"
+              />
               {brand.name}
             </Link>
 

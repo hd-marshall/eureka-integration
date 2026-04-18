@@ -44,12 +44,13 @@ const Footer: React.FC = () => {
           {/* Tech Fusion Column */}
           <div className="border border-gray-400 p-6 flex flex-col items-center justify-center text-center space-y-6">
             <Image
-              src={brand.logo}
+              src="/images/logo/white-eureka-integration-logo.png"
               alt={`${brand.name} Logo`}
-              width={60}
-              height={60}
+              width={0}
+              height={0}
+              sizes="60px"
+              style={{ width: '60px', height: 'auto' }}
               className="object-contain"
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
             <h2 className="font-nunito-sans text-white text-2xl font-light">{brand.name}</h2>
             <p className="font-nunito-sans text-sm leading-relaxed">{footerContent.description}</p>
