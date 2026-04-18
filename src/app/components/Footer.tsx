@@ -12,17 +12,17 @@ const Footer: React.FC = () => {
     description: `${brand.name} — ${brand.tagline.toLowerCase()}. Built for the businesses that process, cut and supply material at scale.`,
 
     productLinks: [
-      { href: '/web-development', label: 'Web Development' },
-      { href: '/mobile-development', label: 'Mobile Development' },
-      { href: '/api-development', label: 'API Development' },
-      { href: '/digital-marketing', label: 'Digital Marketing' },
+      { href: '#portfolio', label: 'Our Specialisation' },
+      { href: '#showcase', label: 'The Platform' },
+      { href: '#white-label', label: 'White Label' },
+      { href: '#services', label: 'Services' },
     ],
 
     generalLinks: [
-      { href: '/home', label: 'Home' },
-      { href: '/contact', label: 'Contact' },
-      { href: '/about', label: 'About' },
-      { href: '/client-login', label: 'Client Login' },
+      { href: '/', label: 'Home' },
+      { href: '#contact', label: 'Contact' },
+      { href: '#process', label: 'About' },
+      // { href: '/client-login', label: 'Client Login' },
     ],
 
     socialLinks: [

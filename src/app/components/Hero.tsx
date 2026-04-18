@@ -132,7 +132,7 @@ const Hero: React.FC = (): React.JSX.Element => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 z-20 relative">
           <button
-            onClick={() => scrollTo('services')}
+            onClick={() => scrollTo('showcase')}
             className="font-nunito-sans border-2 border-brand-navy bg-brand-background text-brand-navy px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent hover:text-white cursor-pointer transition-all duration-200 hover:-translate-y-0.5 z-20 relative"
           >
             {secondaryButtonText}
