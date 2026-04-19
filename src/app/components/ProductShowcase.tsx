@@ -4,132 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { brand } from '@/config/brand';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const CartPanel: React.FC = () => (
-  <div className="p-5 bg-gray-50 font-nunito-sans h-full">
-    <div className="flex items-center justify-between mb-4">
-      <span className="text-sm font-bold text-[#002147]">Your Order</span>
-      <span className="text-[10px] text-gray-400">3 items</span>
-    </div>
-
-    <div className="bg-white border border-gray-200 rounded mb-4">
-      <div className="grid grid-cols-5 px-3 py-2 border-b border-gray-100 text-[9px] text-gray-400 uppercase tracking-wider">
-        <span className="col-span-2">Item</span>
-        <span>Size</span>
-        <span>Qty</span>
-        <span className="text-right">Price</span>
-      </div>
-
-      {[
-        { type: '1D', label: 'Steel Bar', detail: '6000mm stock', size: '850mm cuts', qty: 4, price: '£33.60' },
-        { type: '2D', label: 'MDF Sheet', detail: '2440×1220', size: '600×400mm', qty: 6, price: '£57.00' },
-        { type: '1D', label: 'Aluminium', detail: '6000mm stock', size: '1200mm cuts', qty: 2, price: '£16.32' },
-      ].map((item, i) => (
-        <div key={i} className="grid grid-cols-5 px-3 py-3 border-b border-gray-50 items-center">
-          <div className="col-span-2">
-            <div className="flex items-center gap-2">
-              <span className={`text-[8px] font-bold px-1.5 py-0.5 rounded ${item.type === '1D' ? 'bg-blue-50 text-[#1976D2]' : 'bg-indigo-50 text-indigo-500'}`}>
-                {item.type}
-              </span>
-              <div>
-                <div className="text-[10px] font-semibold text-[#002147]">{item.label}</div>
-                <div className="text-[9px] text-gray-400">{item.detail}</div>
-              </div>
-            </div>
-          </div>
-          <span className="text-[10px] text-gray-600">{item.size}</span>
-          <div className="flex items-center gap-1">
-            <button className="w-5 h-5 border border-gray-200 rounded text-[10px] text-gray-500 flex items-center justify-center">-</button>
-            <span className="text-[10px] text-gray-700 w-4 text-center">{item.qty}</span>
-            <button className="w-5 h-5 border border-gray-200 rounded text-[10px] text-gray-500 flex items-center justify-center">+</button>
-          </div>
-          <span className="text-[10px] font-semibold text-[#002147] text-right">{item.price}</span>
-        </div>
-      ))}
-
-      <div className="px-3 py-2">
-        <button className="text-[10px] text-[#1976D2] font-semibold flex items-center gap-1">
-          <span className="text-base leading-none">+</span> Add another cut
-        </button>
-      </div>
-    </div>
-
-    <div className="bg-white border border-gray-200 rounded p-4">
-      <div className="flex justify-between text-[10px] text-gray-500 mb-1.5">
-        <span>Materials</span><span>£82.32</span>
-      </div>
-      <div className="flex justify-between text-[10px] text-gray-500 mb-1.5">
-        <span>Cutting (14 cuts)</span><span>£24.50</span>
-      </div>
-      <div className="flex justify-between text-[10px] text-gray-500 mb-3 pb-3 border-b border-gray-100">
-        <span>VAT (20%)</span><span>£21.36</span>
-      </div>
-      <div className="flex justify-between text-sm font-bold text-[#002147] mb-4">
-        <span>Total</span><span>£128.18</span>
-      </div>
-      <button className="w-full bg-[#1976D2] text-white text-[10px] font-bold py-2.5 rounded tracking-wide">
-        Place Order
-      </button>
-    </div>
-  </div>
-);
-
-// ── Account UI ───────────────────────────────────────────────────────────────
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const AccountPanel: React.FC = () => (
-  <div className="p-5 bg-gray-50 font-nunito-sans h-full">
-    <div className="flex items-center justify-between mb-5">
-      <div>
-        <div className="text-sm font-bold text-[#002147]">James Mitchell</div>
-        <div className="text-[10px] text-gray-400">Mitchell Fabrication Ltd</div>
-      </div>
-      <span className="text-[9px] px-2 py-1 bg-blue-50 text-[#1976D2] font-semibold rounded">Trade Account</span>
-    </div>
-
-    <div className="grid grid-cols-3 gap-3 mb-5">
-      {[['Orders','24'],['Saved Lists','7'],['Credit Left','£2,400']].map(([l, v]) => (
-        <div key={l} className="bg-white border border-gray-200 rounded p-3 text-center">
-          <div className="text-base font-bold text-[#1976D2]">{v}</div>
-          <div className="text-[9px] text-gray-400 mt-0.5">{l}</div>
-        </div>
-      ))}
-    </div>
-
-    <div className="bg-white border border-gray-200 rounded mb-4">
-      <div className="px-3 py-2 border-b border-gray-100 text-[9px] text-gray-400 uppercase tracking-wider font-semibold">
-        Recent Orders
-      </div>
-      {[
-        { ref: '#1042', date: '12 Apr', items: 'Steel Bar, MDF', total: '£128.18', status: 'Dispatched' },
-        { ref: '#1039', date: '8 Apr',  items: 'Aluminium',      total: '£44.20',  status: 'Complete'  },
-        { ref: '#1031', date: '1 Apr',  items: 'Float Glass',    total: '£212.00', status: 'Complete'  },
-      ].map((o) => (
-        <div key={o.ref} className="grid grid-cols-4 px-3 py-2.5 border-b border-gray-50 text-[10px] items-center">
-          <span className="font-semibold text-[#002147]">{o.ref}</span>
-          <span className="text-gray-400">{o.date}</span>
-          <span className="text-gray-600 truncate">{o.items}</span>
-          <div className="text-right">
-            <div className="font-semibold text-[#002147]">{o.total}</div>
-            <div className={`text-[8px] ${o.status === 'Dispatched' ? 'text-amber-500' : 'text-green-500'}`}>{o.status}</div>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <div className="bg-white border border-gray-200 rounded p-3">
-      <div className="text-[9px] text-gray-400 uppercase tracking-wider font-semibold mb-2">Account Details</div>
-      <div className="grid grid-cols-2 gap-2 text-[10px]">
-        {[['Email','james@mitchell-fab.co.uk'],['Phone','07891 234 567'],['Credit Terms','30 days'],['Delivery','Hatfield, AL10']].map(([l,v]) => (
-          <div key={l}>
-            <div className="text-gray-400">{l}</div>
-            <div className="font-medium text-[#002147]">{v}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
 // ─────────────────────────────────────────────────────────────────────────────
 // FEATURES
 // ─────────────────────────────────────────────────────────────────────────────
@@ -149,7 +23,7 @@ const features: Feature[] = [
   {
     id: 'cutting-1d',
     label: '1D Linear Cutting',
-    url: `app.${brand.domain}/cutting/linear`,
+    url: `${brand.domain}/cutting/linear`,
     title: 'Fit More, Cut Less, Price It Right',
     description: 'Put in your lengths, pick your stock size, and it works out exactly how many bars you need and how many cuts that means. Use the cut count to build your pricing.',
     highlights: [
@@ -171,7 +45,7 @@ const features: Feature[] = [
   {
     id: 'cutting-2d',
     label: '2D Sheet Cutting',
-    url: `app.${brand.domain}/cutting/sheet`,
+    url: `${brand.domain}/cutting/sheet`,
     title: 'Know Your Sheets, Know Your Price',
     description: 'Add your piece sizes and the software figures out how they fit across your sheets. You get a clear layout, a sheet count, and the number of cuts needed to price the job properly.',
     highlights: [
@@ -191,7 +65,7 @@ const features: Feature[] = [
   {
     id: 'cart',
     label: 'Cart',
-    url: `app.${brand.domain}/cart`,
+    url: `${brand.domain}/cart`,
     title: 'Cart That Keeps Up With Changes',
     description: 'Customers can mix 1D and 2D cuts in the same order, adjust quantities, swap sizes, and the total updates straight away. No confusion at checkout.',
     highlights: [
@@ -211,7 +85,7 @@ const features: Feature[] = [
   {
     id: 'orders',
     label: 'Order Management',
-    url: `admin.${brand.domain}/orders`,
+    url: `${brand.domain}/admin/orders`,
     title: 'Orders Come In, Plans Go Out',
     description: 'Every order lands in one view with the cut plan attached. You can see what came in, what it needs, and where it is in the process.',
     highlights: [
@@ -231,7 +105,7 @@ const features: Feature[] = [
   {
     id: 'products',
     label: 'Products & Pricing',
-    url: `admin.${brand.domain}/products`,
+    url: `${brand.domain}/admin/products`,
     title: 'Your Catalogue, Your Prices',
     description: 'You set up the materials, you set the prices. Customers see what you want them to see, priced exactly how you charge for it.',
     highlights: [
@@ -251,7 +125,7 @@ const features: Feature[] = [
   {
     id: 'admin',
     label: 'Admin Dashboard',
-    url: `admin.${brand.domain}/dashboard`,
+    url: `${brand.domain}/admin/dashboard`,
     title: 'Everything in One Place',
     description: 'Revenue, open orders, stock levels and platform activity all on one screen. No digging around to find out what is going on.',
     highlights: [
@@ -271,7 +145,7 @@ const features: Feature[] = [
   {
     id: 'accounts',
     label: 'Account Management',
-    url: `app.${brand.domain}/account`,
+    url: `${brand.domain}/account`,
     title: 'Accounts for Every Customer',
     description: 'Customers log in and see their full order history, saved cut lists and account details. You can manage accounts from the admin side and set credit terms for trade customers.',
     highlights: [

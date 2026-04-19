@@ -253,7 +253,7 @@ const BrandShowcase: React.FC = () => {
                     <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]"/>
                   </div>
                   <div className="flex-1 bg-[#0f172a] rounded px-2 py-0.5 text-[9px] text-gray-500 text-center">
-                    app.{palette.name.toLowerCase().replace(/\s/g, '')}.co.uk
+                    {palette.name.toLowerCase().replace(/\s/g, '')}.com
                   </div>
                 </div>
                 <div className="relative w-full" style={{ aspectRatio: '16/10' }}>
